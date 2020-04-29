@@ -1,0 +1,26 @@
+opam-version: "2.0"
+maintainer:    "mail@fabianbonk.de"
+homepage:      "https://github.com/Reperator/mirage-pci-solo5"
+bug-reports:   "https://github.com/Reperator/mirage-pci-solo5/issues"
+dev-repo:      "git+https://github.com/Reperator/mirage-pci-solo5.git"
+authors:       ["Fabian Bonk"]
+license:       "ISC"
+
+build: [
+  ["dune" "subst"] {pinned}
+  ["dune" "build" "-p" name "-j" jobs]
+]
+
+depends: [
+  "ocaml" {>= "4.06.0"}
+  "dune" {>= "1.0"}
+  "mirage-device" {>= "2.0.0"}
+  "cstruct" {>= "4.0.0"}
+  "lwt" {>= "4.0.0"}
+  "mirage-pci"
+  "mirage-solo5"
+]
+synopsis: "PCIe interface implementation for MirageOS on Solo5"
+description: """
+mirage-pci-solo5 implements `Mirage_pci.S`, the signature for PCIe devices for MirageOS, on Solo5.
+"""

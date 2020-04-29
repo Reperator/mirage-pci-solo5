@@ -1,0 +1,5 @@
+(library
+ (name mirage_pci_solo5)
+ (public_name mirage-pci-solo5)
+ (libraries logs mirage-pci mirage-solo5 cstruct lwt fmt)
+ (wrapped false))
